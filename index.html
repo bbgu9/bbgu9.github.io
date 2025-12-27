@@ -3,34 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的作品集</title>
+    <title>赵一鸣的作品集</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#projects">我的作品</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <div class="container">
-            <h1>我的作品集</h1>
+            <h1>赵一鸣的作品集</h1>
             <p>欢迎来到我的创意空间</p>
         </div>
     </header>
 
     <main>
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <h2>关于我</h2>
                 <div class="about-content">
                     <div class="profile">
-                        <img src="image/赵一鸣1.png" alt="我的照片">
+                        <img src="image/赵一鸣1.png" alt="赵一鸣">
                     </div>
                     <div class="bio">
-                        <p>我是赵一鸣，一名热爱创作的设计师/开发者。我专注于嵌入式，致力于创造有意义的作品。</p>
-                        <p>在这里，您可以看到我的精选作品，了解我的设计理念和创作过程。</p>
+                        <p>我是赵一鸣，一名专注于嵌入式软硬件开发的工程师。我致力于将硬件与软件完美结合，创造高效稳定的嵌入式系统解决方案。</p>
+                        <p>在这里，您可以看到我的精选作品，了解我的技术能力和项目经验。</p>
+                        <div class="skills">
+                            <span class="skill-tag">嵌入式系统</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">STM32</span>
+                            <span class="skill-tag">PCB设计</span>
+                            <span class="skill-tag">驱动开发</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">GitHub</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">微博</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="projects">
+        <section class="projects" id="projects">
             <div class="container">
                 <h2>我的作品</h2>
                 <div class="projects-grid">
@@ -40,8 +62,8 @@
                             <img src="https://via.placeholder.com/400x300" alt="作品1">
                         </div>
                         <div class="project-info">
-                            <h3>作品名称1</h3>
-                            <p>这是一个精美的设计作品，展示了我在嵌入式的专业技能。</p>
+                            <h3>智能家居控制系统</h3>
+                            <p>基于STM32的智能家居控制系统，集成了传感器数据采集、无线通信和自动化控制功能，实现了远程监控和智能联动。</p>
                             <button class="view-btn">查看作品</button>
                         </div>
                     </div>
@@ -52,8 +74,8 @@
                             <img src="https://via.placeholder.com/400x300" alt="作品2">
                         </div>
                         <div class="project-info">
-                            <h3>作品名称2</h3>
-                            <p>这个项目解决了[问题]，采用了[技术]，取得了[成果]。</p>
+                            <h3>工业数据采集模块</h3>
+                            <p>高精度工业数据采集模块，采用24位ADC和FPGA技术，支持多通道同步采集，广泛应用于工业自动化领域。</p>
                             <button class="view-btn">查看作品</button>
                         </div>
                     </div>
@@ -64,8 +86,8 @@
                             <img src="https://via.placeholder.com/400x300" alt="作品3">
                         </div>
                         <div class="project-info">
-                            <h3>作品名称3</h3>
-                            <p>这是我的最新作品，结合了[创新点]，获得了[奖项或认可]。</p>
+                            <h3>嵌入式Linux开发板</h3>
+                            <p>基于ARM Cortex-A9的嵌入式Linux开发板，集成了丰富的外设接口，支持多种操作系统，适用于物联网和边缘计算应用。</p>
                             <button class="view-btn">查看作品</button>
                         </div>
                     </div>
@@ -76,8 +98,8 @@
                             <img src="https://via.placeholder.com/400x300" alt="作品4">
                         </div>
                         <div class="project-info">
-                            <h3>作品名称4</h3>
-                            <p>这个项目展示了我在[领域]的深入研究和实践能力。</p>
+                            <h3>电机驱动控制器</h3>
+                            <p>高性能电机驱动控制器，支持多种电机类型，采用FOC算法实现精确控制，广泛应用于机器人和自动化设备。</p>
                             <button class="view-btn">查看作品</button>
                         </div>
                     </div>
@@ -85,7 +107,7 @@
             </div>
         </section>
 
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <h2>联系我</h2>
                 <div class="contact-form">
@@ -111,15 +133,23 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 我的作品集. 保留所有权利.</p>
+            <div class="footer-content">
+                <p>&copy; 2025 赵一鸣的作品集. 保留所有权利.</p>
+                <div class="contact-dropdown">
+                    <button class="contact-btn">联系方式</button>
+                    <div class="dropdown-menu">
+                        <a href="mailto:example@email.com">邮箱: example@email.com</a>
+                        <a href="tel:+1234567890">电话: +1234567890</a>
+                        <a href="#">微信: your_wechat_id</a>
+                        <a href="#">QQ: your_qq_number</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <div class="loader"></div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
