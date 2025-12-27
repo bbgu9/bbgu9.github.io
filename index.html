@@ -1,13 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的个人网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的作品集</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>欢迎来到我的网站</h1>
-    <p>这是我的个人主页</p>
-    <h2>关于我</h2>
-    <p>在这里介绍你自己...</p>
+    <header>
+        <div class="container">
+            <h1>我的作品集</h1>
+            <p>欢迎来到我的创意空间</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="container">
+                <h2>关于我</h2>
+                <div class="about-content">
+                    <div class="profile">
+                        <img src="https://via.placeholder.com/300x300" alt="我的照片">
+                    </div>
+                    <div class="bio">
+                        <p>我是[您的名字]，一名热爱创作的设计师/开发者。我专注于[您的专业领域]，致力于创造有意义的作品。</p>
+                        <p>在这里，您可以看到我的精选作品，了解我的设计理念和创作过程。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <h2>我的作品</h2>
+                <div class="projects-grid">
+                    <!-- 作品1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="作品1">
+                        </div>
+                        <div class="project-info">
+                            <h3>作品名称1</h3>
+                            <p>这是一个精美的设计作品，展示了我在[领域]的专业技能。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 作品2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="作品2">
+                        </div>
+                        <div class="project-info">
+                            <h3>作品名称2</h3>
+                            <p>这个项目解决了[问题]，采用了[技术]，取得了[成果]。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 作品3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="作品3">
+                        </div>
+                        <div class="project-info">
+                            <h3>作品名称3</h3>
+                            <p>这是我的最新作品，结合了[创新点]，获得了[奖项或认可]。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 作品4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="作品4">
+                        </div>
+                        <div class="project-info">
+                            <h3>作品名称4</h3>
+                            <p>这个项目展示了我在[领域]的深入研究和实践能力。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h2>联系我</h2>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 我的作品集. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
