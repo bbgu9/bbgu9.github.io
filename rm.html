@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM专栏 - 赵一鸣的作品集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <span>↑</span>
+    </button>
+    
+    <nav>
+        <div class="container">
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list" id="navList">
+            <li><a href="index.html#about">关于我</a></li>
+            <li><a href="index.html#projects">我的作品</a></li>
+            <li><a href="hardware.html">硬件</a></li>
+            <li><a href="embedded.html">嵌入式软件</a></li>
+            <li><a href="rm.html" class="active">RM</a></li>
+            <li><a href="project-column.html">项目专栏</a></li>
+            <li><a href="index.html#contact">联系我</a></li>
+            <li><button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button></li>
+        </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>RM专栏</h1>
+            <p>查看机器人竞赛相关项目，包括机器人控制系统、传感器融合等</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects" id="rm-projects">
+            <div class="container">
+                <h2>RM机器人项目展示</h2>
+                <div class="projects-grid">
+                    <!-- RM项目1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="机器人控制系统">
+                        </div>
+                        <div class="project-info">
+                            <h3>机器人控制系统</h3>
+                            <p>基于STM32的机器人运动控制系统，实现了精确的位置控制和路径规划。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- RM项目2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="传感器融合系统">
+                        </div>
+                        <div class="project-info">
+                            <h3>传感器融合系统</h3>
+                            <p>集成摄像头、激光雷达和IMU的传感器融合系统，实现了环境感知和定位。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- RM项目3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="机器人视觉系统">
+                        </div>
+                        <div class="project-info">
+                            <h3>机器人视觉系统</h3>
+                            <p>基于OpenCV的机器人视觉系统，实现了目标识别、跟踪和测距功能。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- RM项目4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="机器人通信系统">
+                        </div>
+                        <div class="project-info">
+                            <h3>机器人通信系统</h3>
+                            <p>基于WiFi和CAN总线的机器人通信系统，实现了多模块之间的实时数据传输。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 赵一鸣的作品集. 保留所有权利.</p>
+                <div class="contact-dropdown">
+                    <button class="contact-btn">联系方式</button>
+                    <div class="dropdown-menu">
+                        <a href="mailto:example@email.com">邮箱: example@email.com</a>
+                        <a href="tel:+1234567890">电话: +1234567890</a>
+                        <a href="#">微信: your_wechat_id</a>
+                        <a href="#">QQ: your_qq_number</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle">项目标题</h2>
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="项目图片">
+                </div>
+                <div class="modal-description">
+                    <p id="modalDescription">项目描述</p>
+                </div>
+                <div class="modal-details">
+                    <h3>技术栈</h3>
+                    <div class="modal-tech" id="modalTech"></div>
+                    <h3>项目亮点</h3>
+                    <ul id="modalHighlights"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader-container" id="loaderContainer">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- 内联脚本作为最终后备 -->
+    <script>
+        function hideLoader() {
+            const loaderContainer = document.getElementById('loaderContainer');
+            if (loaderContainer) {
+                loaderContainer.classList.add('hidden');
+                console.log('内联脚本：已添加hidden类到loaderContainer');
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hideLoader);
+        } else {
+            hideLoader();
+        }
+        window.addEventListener('load', hideLoader);
+        setTimeout(hideLoader, 3000);
+    </script>
+</body>
+</html>

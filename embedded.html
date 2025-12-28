@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入式软件专栏 - 赵一鸣的作品集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <span>↑</span>
+    </button>
+    
+    <nav>
+        <div class="container">
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list" id="navList">
+            <li><a href="index.html#about">关于我</a></li>
+            <li><a href="index.html#projects">我的作品</a></li>
+            <li><a href="hardware.html">硬件</a></li>
+            <li><a href="embedded.html" class="active">嵌入式软件</a></li>
+            <li><a href="rm.html">RM</a></li>
+            <li><a href="project-column.html">项目专栏</a></li>
+            <li><a href="index.html#contact">联系我</a></li>
+            <li><button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button></li>
+        </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>嵌入式软件专栏</h1>
+            <p>了解嵌入式软件开发项目，包括实时操作系统应用、设备驱动开发等</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects" id="embedded-projects">
+            <div class="container">
+                <h2>嵌入式软件项目展示</h2>
+                <div class="projects-grid">
+                    <!-- 嵌入式软件项目1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="实时操作系统应用">
+                        </div>
+                        <div class="project-info">
+                            <h3>实时操作系统应用</h3>
+                            <p>基于FreeRTOS的实时操作系统应用开发，实现了多任务调度和资源管理。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 嵌入式软件项目2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="设备驱动开发">
+                        </div>
+                        <div class="project-info">
+                            <h3>设备驱动开发</h3>
+                            <p>为多种硬件设备开发的驱动程序，包括传感器、通信接口和存储设备等。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 嵌入式软件项目3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="嵌入式Linux应用">
+                        </div>
+                        <div class="project-info">
+                            <h3>嵌入式Linux应用</h3>
+                            <p>基于嵌入式Linux系统的应用开发，包括网络通信、文件系统和图形界面等。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 嵌入式软件项目4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="低功耗优化">
+                        </div>
+                        <div class="project-info">
+                            <h3>低功耗系统优化</h3>
+                            <p>针对嵌入式系统的低功耗优化方案，包括电源管理和任务调度策略。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 赵一鸣的作品集. 保留所有权利.</p>
+                <div class="contact-dropdown">
+                    <button class="contact-btn">联系方式</button>
+                    <div class="dropdown-menu">
+                        <a href="mailto:example@email.com">邮箱: example@email.com</a>
+                        <a href="tel:+1234567890">电话: +1234567890</a>
+                        <a href="#">微信: your_wechat_id</a>
+                        <a href="#">QQ: your_qq_number</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle">项目标题</h2>
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="项目图片">
+                </div>
+                <div class="modal-description">
+                    <p id="modalDescription">项目描述</p>
+                </div>
+                <div class="modal-details">
+                    <h3>技术栈</h3>
+                    <div class="modal-tech" id="modalTech"></div>
+                    <h3>项目亮点</h3>
+                    <ul id="modalHighlights"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader-container" id="loaderContainer">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- 内联脚本作为最终后备 -->
+    <script>
+        function hideLoader() {
+            const loaderContainer = document.getElementById('loaderContainer');
+            if (loaderContainer) {
+                loaderContainer.classList.add('hidden');
+                console.log('内联脚本：已添加hidden类到loaderContainer');
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hideLoader);
+        } else {
+            hideLoader();
+        }
+        window.addEventListener('load', hideLoader);
+        setTimeout(hideLoader, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>硬件专栏 - 赵一鸣的作品集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <span>↑</span>
+    </button>
+    
+    <nav>
+        <div class="container">
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list" id="navList">
+            <li><a href="index.html#about">关于我</a></li>
+            <li><a href="index.html#projects">我的作品</a></li>
+            <li><a href="hardware.html" class="active">硬件</a></li>
+            <li><a href="embedded.html">嵌入式软件</a></li>
+            <li><a href="rm.html">RM</a></li>
+            <li><a href="project-column.html">项目专栏</a></li>
+            <li><a href="index.html#contact">联系我</a></li>
+            <li><button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button></li>
+        </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>硬件专栏</h1>
+            <p>探索各种硬件开发项目，包括智能硬件开发板、传感器模块设计等</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects" id="hardware-projects">
+            <div class="container">
+                <h2>硬件项目展示</h2>
+                <div class="projects-grid">
+                    <!-- 硬件项目1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="智能硬件开发板">
+                        </div>
+                        <div class="project-info">
+                            <h3>智能硬件开发板</h3>
+                            <p>基于ARM架构的高性能智能硬件开发板，支持多种传感器接口和无线通信模块。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 硬件项目2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="传感器模块设计">
+                        </div>
+                        <div class="project-info">
+                            <h3>高精度传感器模块</h3>
+                            <p>集成多种环境传感器的模块，支持温度、湿度、气压和光照等多种参数的精确测量。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 硬件项目3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="电源管理系统">
+                        </div>
+                        <div class="project-info">
+                            <h3>高效电源管理系统</h3>
+                            <p>适用于嵌入式设备的高效电源管理解决方案，支持多种输入输出电压和功率级别。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+
+                    <!-- 硬件项目4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="无线通信模块">
+                        </div>
+                        <div class="project-info">
+                            <h3>低功耗无线通信模块</h3>
+                            <p>基于LoRa和BLE技术的低功耗无线通信模块，适用于物联网设备的远程数据传输。</p>
+                            <button class="view-btn">查看作品</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 赵一鸣的作品集. 保留所有权利.</p>
+                <div class="contact-dropdown">
+                    <button class="contact-btn">联系方式</button>
+                    <div class="dropdown-menu">
+                        <a href="mailto:example@email.com">邮箱: example@email.com</a>
+                        <a href="tel:+1234567890">电话: +1234567890</a>
+                        <a href="#">微信: your_wechat_id</a>
+                        <a href="#">QQ: your_qq_number</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle">项目标题</h2>
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="项目图片">
+                </div>
+                <div class="modal-description">
+                    <p id="modalDescription">项目描述</p>
+                </div>
+                <div class="modal-details">
+                    <h3>技术栈</h3>
+                    <div class="modal-tech" id="modalTech"></div>
+                    <h3>项目亮点</h3>
+                    <ul id="modalHighlights"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader-container" id="loaderContainer">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- 内联脚本作为最终后备 -->
+    <script>
+        function hideLoader() {
+            const loaderContainer = document.getElementById('loaderContainer');
+            if (loaderContainer) {
+                loaderContainer.classList.add('hidden');
+                console.log('内联脚本：已添加hidden类到loaderContainer');
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hideLoader);
+        } else {
+            hideLoader();
+        }
+        window.addEventListener('load', hideLoader);
+        setTimeout(hideLoader, 3000);
+    </script>
+</body>
+</html>
