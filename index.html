@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="loader-container" id="loaderContainer">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
     <canvas id="particleCanvas"></canvas>
     <div class="progress-bar" id="progressBar"></div>
     <button class="back-to-top" id="backToTop" aria-label="返回顶部">
@@ -15,14 +19,23 @@
     
     <nav>
         <div class="container">
-            <ul>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#projects">我的作品</a></li>
-                <li><a href="#contact">联系我</a></li>
-                <li><button class="theme-toggle" id="themeToggle" aria-label="切换主题">
-                    <span class="theme-icon">🌙</span>
-                </button></li>
-            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list" id="navList">
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#projects">我的作品</a></li>
+            <li><a href="#hardware">硬件</a></li>
+            <li><a href="#embedded">嵌入式软件</a></li>
+            <li><a href="#rm">RM</a></li>
+            <li><a href="#project-column">项目专栏</a></li>
+            <li><a href="#contact">联系我</a></li>
+            <li><button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <span class="theme-icon">🌙</span>
+            </button></li>
+        </ul>
         </div>
     </nav>
 
@@ -36,12 +49,12 @@
     <main>
         <section class="about" id="about">
             <div class="container">
-                <h2>关于我</h2>
+                <h2 class="fade-in">关于我</h2>
                 <div class="about-content">
-                    <div class="profile">
+                    <div class="profile fade-in">
                         <img src="image/赵一鸣1.png" alt="赵一鸣">
                     </div>
-                    <div class="bio">
+                    <div class="bio fade-in">
                         <p>我是赵一鸣，一名专注于嵌入式软硬件开发的工程师。我致力于将硬件与软件完美结合，创造高效稳定的嵌入式系统解决方案。</p>
                         <p>在这里，您可以看到我的精选作品，了解我的技术能力和项目经验。</p>
                         <div class="skills">
@@ -51,10 +64,10 @@
                             <span class="skill-tag">PCB设计</span>
                             <span class="skill-tag">驱动开发</span>
                         </div>
-                        <div class="social-links">
-                            <a href="#">GitHub</a>
-                            <a href="#">LinkedIn</a>
-                            <a href="#">微博</a>
+                        <div class="social-links fade-in">
+                            <a href="#"><span>GitHub</span></a>
+                            <a href="#"><span>LinkedIn</span></a>
+                            <a href="#"><span>微博</span></a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +76,7 @@
 
         <section class="projects" id="projects">
             <div class="container">
-                <h2>我的作品</h2>
+                <h2 class="fade-in">我的作品</h2>
                 <div class="projects-grid">
                     <!-- 作品1 -->
                     <div class="project-card">
@@ -116,10 +129,86 @@
             </div>
         </section>
 
+        <!-- 硬件专栏 -->
+        <section class="projects" id="hardware">
+            <div class="container">
+                <a href="#hardware" class="column-title-link fade-in">
+                    <h2>硬件</h2>
+                </a>
+                <a href="hardware.html" class="column-link fade-in">
+                    <div class="column-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500" alt="硬件专栏">
+                        </div>
+                        <div class="column-info">
+                            <p>探索各种硬件开发项目，包括智能硬件开发板、传感器模块设计等。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 嵌入式软件专栏 -->
+        <section class="projects" id="embedded">
+            <div class="container">
+                <a href="#embedded" class="column-title-link fade-in">
+                    <h2>嵌入式软件</h2>
+                </a>
+                <a href="embedded.html" class="column-link fade-in">
+                    <div class="column-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500" alt="嵌入式软件专栏">
+                        </div>
+                        <div class="column-info">
+                            <p>了解嵌入式软件开发项目，包括实时操作系统应用、设备驱动开发等。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- RM专栏 -->
+        <section class="projects" id="rm">
+            <div class="container">
+                <a href="#rm" class="column-title-link fade-in">
+                    <h2>RM</h2>
+                </a>
+                <a href="rm.html" class="column-link fade-in">
+                    <div class="column-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500" alt="RM专栏">
+                        </div>
+                        <div class="column-info">
+                            <p>查看机器人竞赛相关项目，包括机器人控制系统、传感器融合等。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 项目专栏 -->
+        <section class="projects" id="project-column">
+            <div class="container">
+                <a href="#project-column" class="column-title-link fade-in">
+                    <h2>项目专栏</h2>
+                </a>
+                <a href="project-column.html" class="column-link fade-in">
+                    <div class="column-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500" alt="项目专栏">
+                        </div>
+                        <div class="column-info">
+                            <p>浏览完整的项目案例，包括智能农业系统、工业自动化解决方案等。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <section class="contact" id="contact">
             <div class="container">
-                <h2>联系我</h2>
-                <div class="contact-form">
+                <h2 class="fade-in">联系我</h2>
+                <div class="contact-form fade-in">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">姓名</label>
@@ -178,8 +267,35 @@
         </div>
     </div>
 
-    <div class="loader"></div>
-
     <script src="script.js"></script>
+    
+    <!-- 内联脚本作为最后一道防线，确保loader能被隐藏 -->
+    <script>
+        // 页面加载完成后隐藏loader（直接执行，不依赖DOMContentLoaded）
+        function hideLoader() {
+            const loaderContainer = document.getElementById('loaderContainer');
+            if (loaderContainer) {
+                loaderContainer.classList.add('hidden');
+                console.log('内联脚本：已添加hidden类到loaderContainer');
+            }
+        }
+        
+        // 多种触发机制确保loader被隐藏
+        
+        // 1. 立即尝试隐藏（如果DOM已经加载完成）
+        if (document.readyState === 'loading') {
+            // DOM仍在加载中，等待完成
+            document.addEventListener('DOMContentLoaded', hideLoader);
+        } else {
+            // DOM已经加载完成，立即执行
+            hideLoader();
+        }
+        
+        // 2. 页面完全加载后再次尝试
+        window.addEventListener('load', hideLoader);
+        
+        // 3. 设置一个最长等待时间，确保loader最终会被隐藏
+        setTimeout(hideLoader, 3000);
+    </script>
 </body>
 </html>
